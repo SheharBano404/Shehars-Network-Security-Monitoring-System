@@ -20,7 +20,7 @@
 |---|---|
 | ![Grafana dashboards overview](screenshots/01-grafana-dashboards-overview.png) | ![Node Exporter Full dashboard under stress](screenshots/02-node-exporter-full-stress-test.png) |
 
-| ShehearWatch - Custom Security Dashboard | Alertmanager - Critical Alert Firing |
+| SheharWatch - Custom Security Dashboard | Alertmanager - Critical Alert Firing |
 |---|---|
 | ![Security dashboard failed logins panel](screenshots/03-sheharwatch-security-dashboard.png) | ![InstanceDown alert firing email](screenshots/04-alertmanager-instancedown-firing.png) |
 
