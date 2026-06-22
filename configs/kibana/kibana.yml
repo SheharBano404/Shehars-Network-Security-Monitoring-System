@@ -1,0 +1,7 @@
+### Kibana configuration
+### Path: /etc/kibana/kibana.yml
+### Deployed on: Ubuntu Server
+
+server.port: 5601
+server.host: "0.0.0.0"
+elasticsearch.hosts: ["http://192.168.109.128:9201"]

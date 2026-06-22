@@ -1,0 +1,19 @@
+### Filebeat configuration
+### Path: /etc/filebeat/filebeat.yml
+### Deployed on: Kali Linux (monitored node)
+### Ships system/auth logs to Logstash on the Ubuntu monitoring hub
+
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /var/log/*.log
+      - /var/log/syslog
+      - /var/log/auth.log
+
+output.logstash:
+  hosts: ["192.168.109.128:5044"]
+
+# Elasticsearch output is disabled in favor of routing through Logstash:
+# output.elasticsearch:
+#   hosts: ["localhost:9200"]

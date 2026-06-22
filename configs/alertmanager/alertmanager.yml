@@ -1,0 +1,38 @@
+### Alertmanager configuration
+### Path: /etc/alertmanager/alertmanager.yml
+###
+### SECURITY NOTE: Never commit real email addresses or app passwords to
+### version control. Keep this file in .gitignore on your server, or use
+### environment variable substitution / a secrets manager in production.
+### The values below are placeholders only.
+
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: 'email-alert'
+
+receivers:
+  - name: 'email-alert'
+    email_configs:
+      - to: 'your_email@gmail.com'
+        from: 'your_email@gmail.com'
+        smarthost: 'smtp.gmail.com:587'
+        auth_username: 'your_email@gmail.com'
+        auth_password: 'your_app_password'
+        send_resolved: true
+
+# Strategy options:
+#
+# Option A: Self-Alert (recommended for solo/lab setups)
+#   from = to = your own Gmail address, authenticated with a Gmail App Password.
+#   Simplest to set up; alerts land directly in your own inbox.
+#
+# Option B: Sending to others
+#   from = your Gmail (acts as the relay), to = recipient@example.com.
+#   Still authenticates with your own Gmail App Password. Useful for routing
+#   alerts to a team lead, client, or shared inbox.

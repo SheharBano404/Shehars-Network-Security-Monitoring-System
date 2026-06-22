@@ -1,0 +1,24 @@
+# Secrets — never commit real credentials
+**/alertmanager.local.yml
+*.env
+.env
+**/*_password*
+**/*_secret*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Archives / downloads pulled during setup
+*.tar.gz
+node_exporter-*/
+prometheus-*/
+alertmanager-*/

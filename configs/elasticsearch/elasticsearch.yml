@@ -1,0 +1,12 @@
+### Elasticsearch configuration additions
+### Path: /etc/elasticsearch/elasticsearch.yml
+### Deployed on: Ubuntu Server
+###
+### These lines were added/uncommented on top of the default config.
+### NOTE: xpack.security is disabled here for lab/prototype simplicity only.
+### Enable it (and TLS) before using this stack outside an isolated lab network.
+
+network.host: 0.0.0.0
+http.port: 9201
+xpack.security.enabled: false
+discovery.type: single-node
